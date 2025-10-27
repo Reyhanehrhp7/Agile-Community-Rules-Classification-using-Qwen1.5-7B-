@@ -1,0 +1,48 @@
+
+seed: 42
+torch_seed: 42
+
+datasets:
+  - path: ./prepared_data/
+    type: chat_template
+    field_messages: messages
+    chat_template: tokenizer_default
+    train_on_split: train
+
+test_datasets:
+  - path: ./prepared_data/
+    type: chat_template
+    field_messages: messages
+    chat_template: tokenizer_default
+    split: test
+    
+train_on_inputs: false
+
+base_model: Qwen/Qwen1.5-7B
+load_in_4bit: true
+adapter: qlora
+lora_r: 64
+lora_alpha: 128
+lora_dropout: 0.05
+lora_target_linear: true
+
+load_best_model_at_end: true
+eval_strategy: epoch
+save_strategy: epoch
+metric_for_best_model: eval_loss
+greater_is_better: false
+
+micro_batch_size: 2
+gradient_accumulation_steps: 8
+gradient_checkpointing: true
+fp16: true
+
+learning_rate: 2e-4
+lr_scheduler: cosine
+num_epochs: 3
+optimizer: paged_adamw_8bit
+warmup_ratio: 0.1
+
+output_dir: prepared_data
+report_to: wandb
+wandb_project: PartC_Training_Instruction_Model

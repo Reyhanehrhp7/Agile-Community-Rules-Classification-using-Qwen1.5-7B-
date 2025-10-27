@@ -1,0 +1,33 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg-info/
+*.ipynb_checkpoints/
+
+# Environments
+.env
+.venv/
+env/
+venv/
+
+# Logs and temp files
+*.log
+*.tmp
+
+# Model outputs and checkpoints
+outputs/
+checkpoints/
+runs/
+wandb/
+*.bin
+*.pt
+*.ckpt
+*.pth
+*.safetensors
+
+# OS files
+.DS_Store
+Thumbs.db
