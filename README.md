@@ -1,4 +1,10 @@
 ### Agile-Community-Rules-Classification-using-Qwen1.5-7B-
+
+## Project Overview
+
+This repository contains all of my work for the Kaggle competition focused on automated classification of community posts according to the rules of the Agile Community. Using state-of-the-art LLM techniques, the goal is to build a model that can reliably and accurately classify text into rule-categories, enabling scalable moderation and quality control in online communities.
+
+
 ## Part A:
 
 I fine-tuned Qwen1.5-7B using the Hugging Face Transformers framework with the QLoRA approach and an added classification head for binary text classification.
